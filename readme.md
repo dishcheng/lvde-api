@@ -10,6 +10,14 @@
 
 移动`vendor/dishcheng/lvde-api/config/lvde_api.php`到`config`目录下
 
+该配置文件中`LVDE_API_MODE`参数用于标示对接环境，
+
+| 值  | 含义  |
+| :------: | :-------: |
+|  DEV |  测试服  |
+|  PROD |  正式服  |
+
+
 修改文件
 `bootstrap/app.php`
 ```php
