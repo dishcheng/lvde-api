@@ -1,5 +1,5 @@
 {
-  "name": "dishcheng/zwy-api",
+  "name": "dishcheng/lvde-api",
   "license": "MIT",
   "authors": [
     {
@@ -9,7 +9,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "DishCheng\\ZwyApi\\": "src/"
+      "DishCheng\\LvDeApi\\": "src/"
     }
   },
   "minimum-stability": "stable",
