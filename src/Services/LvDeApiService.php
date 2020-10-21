@@ -50,7 +50,7 @@ class LvDeApiService extends ClientRequestService
      */
     public function order($orderData)
     {
-        return $this->post_request(LvDeUriConstant::Order, $orderData);
+        return $this->lvDe_post_request(LvDeUriConstant::Order, $orderData);
     }
 
     /**
@@ -61,6 +61,6 @@ class LvDeApiService extends ClientRequestService
      */
     public function order_pay(array $data)
     {
-        return $this->post_request(LvDeUriConstant::Pay, $data);
+        return $this->lvDe_post_request(LvDeUriConstant::Pay, $data);
     }
 }
