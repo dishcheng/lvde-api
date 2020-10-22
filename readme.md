@@ -51,7 +51,7 @@ $res=$service->order_detail($orderId);
 
 //取消订单（未支付情况下）
 $res=$service->order_cancel(['order_id'=>$orderId]);
-//通知我方订单已支付
+//确认收货
 $res=$service->confirm_receivedGoods(['order_id'=>$orderId]);
 //申请退款（已支付情况下）
 $res=$service->order_refund(['order_id'=>$orderId,'refund_reason'=>'退款原因']);
