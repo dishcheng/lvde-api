@@ -54,6 +54,17 @@ class LvDeApiService extends ClientRequestService
     }
 
     /**
+     * 订单详情
+     * @param $orderId
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \DishCheng\LvdeApi\Exceptions\LvDeApiException
+     */
+    public function order_detail(string $orderId)
+    {
+        return $this->lvDe_get_request(LvDeUriConstant::Order.'/'.$orderId);
+    }
+
+    /**
      * 告知我方已支付
      * @param array $data
      * @return \Psr\Http\Message\ResponseInterface
@@ -62,5 +73,40 @@ class LvDeApiService extends ClientRequestService
     public function order_pay(array $data)
     {
         return $this->lvDe_post_request(LvDeUriConstant::Pay, $data);
+    }
+
+    /**
+     * 取消订单(未支付情况下调用)
+     * @param array $data
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \DishCheng\LvdeApi\Exceptions\LvDeApiException
+     */
+    public function order_cancel(array $data)
+    {
+        return $this->lvDe_post_request(LvDeUriConstant::OrderCancel, $data);
+    }
+
+
+    /**
+     * 确认收货
+     * @param array $data
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \DishCheng\LvdeApi\Exceptions\LvDeApiException
+     */
+    public function confirm_receivedGoods(array $data)
+    {
+        return $this->lvDe_post_request(LvDeUriConstant::OrderConfirmReceivedGoods, $data);
+    }
+
+
+    /**
+     * 订单申请退款(已支付情况下调用)
+     * @param array $data
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \DishCheng\LvdeApi\Exceptions\LvDeApiException
+     */
+    public function order_refund(array $data)
+    {
+        return $this->lvDe_post_request(LvDeUriConstant::OrderRefund, $data);
     }
 }
